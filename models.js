@@ -60,6 +60,7 @@ PostSchema.pre("save", function(next){
 
 var UserSchema = new Schema({
     posts: [PostSchema],
+    sessions: [GameSessionSchema],
     email: {
       type: String,
       unique: true,

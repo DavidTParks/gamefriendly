@@ -16,7 +16,7 @@ app.use(cookieParser());
 //Mongoose Configuration
 var mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/fifty");
+mongoose.connect("mongodb://localhost:27017/gamefriendly");
 
 var db = mongoose.connection;
 

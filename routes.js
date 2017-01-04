@@ -5,6 +5,7 @@ var passport = require('passport');
 var router = express.Router();
 var Post = require("./models").Post;
 var User = require("./models").User;
+var GameSession = require("./models").GameSession;
 
 router.param("uID", function(req, res, next, id) {
     User.findById(id, function(err, doc) {
@@ -140,6 +141,21 @@ router.post("/posts/:uID/", function(req, res, next) {
         });
         res.status(201);
         res.json(user);
+    });
+});
+
+//POST /posts
+// Route for creating posts for specific user
+router.post("/gamesessions/:uID/", function(req, res, next) {
+    var gamesession = new GameSession(req.body);
+    req.user.sessions.push(gamesession);
+    req.user.save(function(err, user) {
+        if(err) return next(err);
+        gamesession.save(function(err, gamesession){
+            if(err) return next(err);
+            res.json(gamesession);
+        });
+        res.status(201);
     });
 });
 
