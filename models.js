@@ -42,6 +42,7 @@ var GameSessionSchema = new Schema({
     description: String,
     game: String,
     age: String,
+    open: Boolean,
     createdAt: {type: Date, default: Date.now},
     updatedAt: {type: Date, default: Date.now},
     platform: {type: [String], enum: ["Xbox One", "PS4", "PC"]}
@@ -102,6 +103,7 @@ UserSchema.statics.authenticate = function(email, password, callback) {
 // hash password before saving to database
 UserSchema.pre('save', function(next) {
   this.posts.sort(sortPosts);
+  this.sessions.sort(sortPosts);
   var user = this;
   bcrypt.hash(user.password, 10, function(err, hash) {
     if (err) {

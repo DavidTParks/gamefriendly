@@ -146,6 +146,18 @@ router.post("/posts/:uID/", function(req, res, next) {
 
 //POST /posts
 // Route for creating posts for specific user
+router.get("/gamesessions", function(req, res, next) {
+    GameSession.find({})
+                .sort({createdAt: -1}) 
+                .exec(function(err, users) {
+                    if(err) return next(err);
+                    res.json(users);
+                });
+});
+
+
+//POST /posts
+// Route for creating posts for specific user
 router.post("/gamesessions/:uID/", function(req, res, next) {
     var gamesession = new GameSession(req.body);
     req.user.sessions.push(gamesession);
