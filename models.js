@@ -41,6 +41,7 @@ var GameSessionSchema = new Schema({
     title: String,
     description: String,
     game: String,
+    age: String,
     createdAt: {type: Date, default: Date.now},
     updatedAt: {type: Date, default: Date.now},
     platform: {type: [String], enum: ["Xbox One", "PS4", "PC"]}
