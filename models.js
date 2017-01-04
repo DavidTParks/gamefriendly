@@ -37,6 +37,15 @@ CommentSchema.method("vote", function(vote, callback) {
     this.parent().save(callback);
 });
 
+var GameSessionSchema = new Schema({
+    title: String,
+    description: String,
+    game: String,
+    createdAt: {type: Date, default: Date.now},
+    updatedAt: {type: Date, default: Date.now},
+    platform: {type: [String], enum: ["XBOX", "PLAYSTATION", "PC"]}
+});
+
 var PostSchema = new Schema({
     text: String,
     createdAt: {type: Date, default: Date.now},
@@ -101,8 +110,10 @@ UserSchema.pre('save', function(next) {
   })
 });
 
+var GameSession = mongoose.model("GameSession", GameSessionSchema);
 var Post = mongoose.model("Post", PostSchema);
 var User = mongoose.model("User", UserSchema);
 
+module.exports.GameSession = GameSession;
 module.exports.Post = Post;
 module.exports.User = User;
