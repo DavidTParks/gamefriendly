@@ -43,7 +43,7 @@ var GameSessionSchema = new Schema({
     game: String,
     createdAt: {type: Date, default: Date.now},
     updatedAt: {type: Date, default: Date.now},
-    platform: {type: [String], enum: ["XBOX", "PLAYSTATION", "PC"]}
+    platform: {type: [String], enum: ["Xbox One", "PS4", "PC"]}
 });
 
 var PostSchema = new Schema({
