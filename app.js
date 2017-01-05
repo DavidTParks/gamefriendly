@@ -47,6 +47,12 @@ app.use(session({
     saveUninitialized: false
 }));
 
+app.use(function (req, res, next) {
+    res.locals.currentUser = req.session.userId;
+    next();
+});
+
+
 //Use our routes
 app.use(routes);
 

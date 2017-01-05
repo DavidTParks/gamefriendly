@@ -6,6 +6,7 @@ var router = express.Router();
 var Post = require("./models").Post;
 var User = require("./models").User;
 var GameSession = require("./models").GameSession;
+var mid = require ("./middleware/index");
 
 //Gamesession parameter
 router.param("gID", function(req, res, next, id) {
