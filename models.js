@@ -38,6 +38,10 @@ CommentSchema.method("vote", function(vote, callback) {
 });
 
 var GameSessionSchema = new Schema({
+    postedBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
     title: String,
     description: String,
     game: String,

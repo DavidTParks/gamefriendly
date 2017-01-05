@@ -161,6 +161,7 @@ router.get("/gamesessions", function(req, res, next) {
 router.post("/gamesessions/:uID/", function(req, res, next) {
     var gamesession = new GameSession(req.body);
     req.user.sessions.push(gamesession);
+    gamesession.postedBy = req.user._id;
     req.user.save(function(err, user) {
         if(err) return next(err);
         gamesession.save(function(err, gamesession){
