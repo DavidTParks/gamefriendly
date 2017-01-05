@@ -7,6 +7,19 @@ var Post = require("./models").Post;
 var User = require("./models").User;
 var GameSession = require("./models").GameSession;
 
+router.param("gID", function(req, res, next, id) {
+    GameSession.findById(id, function(err, doc) {
+        if(err) return next(err);
+        if(!doc) {
+            err = new Error("Not Found");
+            err.status = 404;
+            return next(err);
+        }
+        req.gamesession = doc;
+        return next();
+    });
+});
+
 router.param("uID", function(req, res, next, id) {
     User.findById(id, function(err, doc) {
         if(err) return next(err);
@@ -144,8 +157,8 @@ router.post("/posts/:uID/", function(req, res, next) {
     });
 });
 
-//POST /posts
-// Route for creating posts for specific user
+//GET /gamesessions
+// Route for returning all game sessions
 router.get("/gamesessions", function(req, res, next) {
     GameSession.find({})
                 .sort({createdAt: -1}) 
@@ -153,6 +166,12 @@ router.get("/gamesessions", function(req, res, next) {
                     if(err) return next(err);
                     res.json(users);
                 });
+});
+
+//GET /gamesessions/:gID
+// Route for returning a specific game session
+router.get("/gamesessions/:gID", function(req, res, next) {
+    res.json(req.gamesession);
 });
 
 
