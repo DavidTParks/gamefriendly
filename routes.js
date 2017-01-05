@@ -96,9 +96,9 @@ router.post("/login", function(req, res, next) {
                 err.status = 401;
                 return next(err);
             } else {
-                res.status(201);
-                //res.json(user);
                 req.session.userId = user._id;
+                res.status(201);
+                res.json(user);
             }
         });
     } else {
@@ -177,11 +177,11 @@ router.get("/gamesessions", function(req, res, next) {
 });
 
 //GET /gamesessions
-// Route for returning specific game sessions
+// Route for returning multiple game sessions with parameters
 router.get("/gamesessions/:platform/:game", function(req, res, next) {
     var platform = req.params.platform;
     var game = req.params.game;
-    GameSession.find({platform: platform,game: game})
+    GameSession.find({platform: platform, game: game})
                 .sort({createdAt: -1}) 
                 .exec(function(err, sessions) {
                     if(err) return next(err);
@@ -194,14 +194,14 @@ router.get("/gamesessions/:platform/:game", function(req, res, next) {
 });
 
 //GET /gamesessions/:gID
-// Route for returning a specific game session
+// Route for returning a single unique game session
 router.get("/gamesessions/:gID", function(req, res, next) {
     res.json(req.gamesession);
 });
 
 
 //POST /posts
-// Route for creating posts for specific user
+// Route for creating gamesessions for specific user
 router.post("/gamesessions/:uID/", function(req, res, next) {
     var gamesession = new GameSession(req.body);
     req.user.sessions.push(gamesession);
