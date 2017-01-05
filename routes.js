@@ -170,9 +170,26 @@ router.post("/posts/:uID/", function(req, res, next) {
 router.get("/gamesessions", function(req, res, next) {
     GameSession.find({})
                 .sort({createdAt: -1}) 
-                .exec(function(err, users) {
+                .exec(function(err, sessions) {
                     if(err) return next(err);
-                    res.json(users);
+                    res.json(sessions);
+                });
+});
+
+//GET /gamesessions
+// Route for returning specific game sessions
+router.get("/gamesessions/:platform/:game", function(req, res, next) {
+    var platform = req.params.platform;
+    var game = req.params.game;
+    GameSession.find({platform: platform,game: game})
+                .sort({createdAt: -1}) 
+                .exec(function(err, sessions) {
+                    if(err) return next(err);
+                    if (!sessions.length) {
+                        err = new Error("No sessions found");
+                        return next(err);
+                    }
+                    res.json(sessions);
                 });
 });
 
