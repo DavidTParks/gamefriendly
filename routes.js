@@ -7,6 +7,7 @@ var Post = require("./models").Post;
 var User = require("./models").User;
 var GameSession = require("./models").GameSession;
 
+//Gamesession parameter
 router.param("gID", function(req, res, next, id) {
     GameSession.findById(id, function(err, doc) {
         if(err) return next(err);
@@ -20,6 +21,7 @@ router.param("gID", function(req, res, next, id) {
     });
 });
 
+//User parameter
 router.param("uID", function(req, res, next, id) {
     User.findById(id, function(err, doc) {
         if(err) return next(err);
@@ -33,6 +35,7 @@ router.param("uID", function(req, res, next, id) {
     });
 });
 
+//Post parameter
 router.param("pID", function(req, res, next, id) {
     Post.findById(id, function(err, doc) {
         if(err) return next(err);
@@ -46,6 +49,7 @@ router.param("pID", function(req, res, next, id) {
     });
 });
 
+//Comment parameter
 router.param("cID", function(req, res, next, id) {
     req.comment = req.post.comments.id(id);
     if(!req.comment) {
@@ -56,6 +60,8 @@ router.param("cID", function(req, res, next, id) {
     next();
 });
 
+//POST
+//Signs up user if all fields are correct
 router.post("/signup", function(req, res, next) {
     if(req.body.email &&
        req.body.name &&
@@ -81,6 +87,7 @@ router.post("/signup", function(req, res, next) {
 });
 
 //POST login
+//Logs in user and returns the session id
 router.post("/login", function(req, res, next) {
     if(req.body.email && req.body.password) {
         User.authenticate(req.body.email, req.body.password, function(error, user) {
@@ -102,6 +109,7 @@ router.post("/login", function(req, res, next) {
 });
 
 //GET /logout
+//Logs user out and destroys session
 router.get("/logout", function(req, res, next) {
     if(req.session) {
         req.session.destroy(function(err) {
