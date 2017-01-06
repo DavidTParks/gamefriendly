@@ -42,15 +42,32 @@ var GameSessionSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
-    title: String,
-    description: String,
-    game: String,
+    region: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String,
+      required: true
+    },
+    description: {
+      type: String,
+      required: true
+    },
+    game: {
+      type: String,
+      required: true
+    },
     age: String,
-    open: Boolean,
     createdAt: {type: Date, default: Date.now},
     updatedAt: {type: Date, default: Date.now},
-    platform: {type: [String], enum: ["Xbox One", "PS4", "PC"]}
+    platform: {
+      type: [String], 
+      enum: ["Xbox One", "PS4", "PC"],
+      required: true
+    }
 });
+
 
 var PostSchema = new Schema({
     text: String,
@@ -72,8 +89,9 @@ var UserSchema = new Schema({
       required: true,
       trim: true
     },
-    name: {
+    username: {
       type: String,
+      unique: true,
       required: true,
       trim: true
     },

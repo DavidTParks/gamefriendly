@@ -17,7 +17,7 @@ app.use(cookieParser());
 //Mongoose Configuration
 var mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/gamefriendly");
+mongoose.connect("mongodb://localhost:27017/yetanother");
 
 var db = mongoose.connection;
 
@@ -45,7 +45,10 @@ app.use(function(req, res, next) {
 app.use(session({
     secret:"david is ur pal",
     resave: true,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store: new MongoStore({
+        mongooseConnection: db
+    })
 }));
 
 app.use(function (req, res, next) {

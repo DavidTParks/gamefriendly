@@ -65,7 +65,7 @@ router.param("cID", function(req, res, next, id) {
 //Signs up user if all fields are correct
 router.post("/signup", function(req, res, next) {
     if(req.body.email &&
-       req.body.name &&
+       req.body.username &&
        req.body.password &&
        req.body.confirmPassword) {
         if(req.body.password !== req.body.confirmPassword) {
@@ -213,10 +213,36 @@ router.post("/gamesessions/:uID/", function(req, res, next) {
         gamesession.save(function(err, gamesession){
             if(err) return next(err);
             res.json(gamesession);
+            res.status(201);
         });
-        res.status(201);
     });
 });
+
+//PUT /gamesessions/:uID/:gID
+//Edit a game session
+/*
+router.put("/gamesessions/:uID/sessions/:gID", function(req, res) {
+    req.gamesession.sessionupdate(req.body, function(err, result) {
+        if(err) return next(err);
+        res.json(result);
+    });
+});
+*/
+
+/*
+//DELETE /posts/:id/comments/:id
+//Delete a specific comment
+router.delete("/gamesessions/:uID/sessions/:gID", function(req, res) {
+    var gamesession = new GameSession(req.body);
+    req.user.sessions.pop(gamesession);
+    gamesession.remove(function(err) {
+        req.user.save(function(err, user) {
+            if(err) return next(err);
+            res.json(user);
+        });
+    });
+});
+*/
 
 //GET specific post
 router.get("/posts/:pID", function(req, res, next) {
