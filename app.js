@@ -4,10 +4,11 @@ var express = require("express");
 var app = express();
 var routes = require("./routes");
 
-var jsonParser = require("body-parser").json;
-var logger = require("morgan");
+var jsonParser   = require("body-parser").json;
+var logger       = require("morgan");
 var cookieParser = require("cookie-parser");
 var session      = require("express-session");
+var MongoStore = require("connect-mongo")(session);
 
 app.use(logger("dev"));
 app.use(jsonParser());

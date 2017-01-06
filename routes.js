@@ -128,6 +128,7 @@ router.get("/logout", function(req, res, next) {
 //Route to get all users
 router.get("/users", function(req, res, next) {
     User.find({})
+                .select('-password')
                 .exec(function(err, users) {
                     if(err) return next(err);
                     res.json(users);
