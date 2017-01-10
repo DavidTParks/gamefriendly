@@ -60,7 +60,8 @@ app.use(function (req, res, next) {
 //Use our routes
 app.use(routes);
 
-app.set("view engine", "ejs"); // set up ejs for templating
+//Set the view enginge for ejs templates
+app.set("view engine", "ejs");
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next){
@@ -79,6 +80,7 @@ app.use(function(err, req, res, next){
     });
 });
 
+//Running on localhost port 3000
 var port = process.env.PORT || 3000;
 
 app.listen(port, function() {

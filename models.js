@@ -101,7 +101,7 @@ var UserSchema = new Schema({
     }
 });
 
-// authenticate input against database documents
+//Authenticate the users information against the database
 UserSchema.statics.authenticate = function(email, password, callback) {
   User.findOne({ email: email })
       .exec(function (error, user) {
@@ -122,7 +122,7 @@ UserSchema.statics.authenticate = function(email, password, callback) {
       });
 }
 
-// hash password before saving to database
+//Hash password, sort posts and sort sessions before saving the user to the DB
 UserSchema.pre('save', function(next) {
   this.posts.sort(sortPosts);
   this.sessions.sort(sortPosts);
