@@ -280,6 +280,19 @@ router.delete("/posts/:pID/comments/:cID", function(req, res) {
     });
 });
 
+//DELETE /posts/:id/comments/:id
+//Delete a specific gamesession
+router.delete("/gamesessions/:uID/sessions/:gID", function(req, res) {
+    req.user.sessions.gamesession.remove(function(err) {
+        req.gamesessions.remove(function(err) {
+            req.user.save(function(err, user) {
+                if(err) return next(err);
+                res.json(user);
+            });
+        });
+    });
+});
+
 //POST /posts/:pID/comments/:cID/vote-up
 //POST /posts/:pID/comments/:cID/vote-down
 //Vote on an comment
