@@ -147,7 +147,7 @@ router.get("/users/:uID", function(req, res, next) {
 router.get("/posts", function(req, res, next) {
     Post.find({})
                 .lean()
-                .sort({createdAt: -1}) 
+                .sort({createdAt: -1})
                 .exec(function(err, posts) {
                     if(err) return next(err);
                     res.json(posts);
@@ -174,7 +174,7 @@ router.post("/posts/:uID/", function(req, res, next) {
 router.get("/gamesessions", function(req, res, next) {
     GameSession.find({})
                 .lean()
-                .sort({createdAt: -1}) 
+                .sort({createdAt: -1})
                 .exec(function(err, sessions) {
                     if(err) return next(err);
                     res.json(sessions);
@@ -224,7 +224,7 @@ router.post("/gamesessions/:uID/", function(req, res, next) {
 
 //PUT /gamesessions/:uID/:gID
 //Edit a game session
-router.put("/gamesessions/:uID/sessions/:gID", function(req, res) {
+router.put("/gamesessions/:uID/sessions/:gID", function(req, res, next) {
     req.user.sessions.id(req.gamesession._id).sessionupdate(req.body, function(err, result) {
         if(err) return next(err);
         res.json(result);
@@ -286,7 +286,7 @@ router.delete("/posts/:pID/comments/:cID", function(req, res) {
 //POST /posts/:pID/comments/:cID/vote-up
 //POST /posts/:pID/comments/:cID/vote-down
 //Vote on an comment on your post
-router.post("/posts/:pID/comments/:cID/vote-:dir", 
+router.post("/posts/:pID/comments/:cID/vote-:dir",
     function(req, res, next) {
         if(req.params.dir.search(/^(up|down)$/) == -1) {
             var err = new Error("Not Found");
@@ -296,7 +296,7 @@ router.post("/posts/:pID/comments/:cID/vote-:dir",
             req.vote = req.params.dir;
             next();
         }
-    }, 
+    },
     function(req, res, next) {
         req.comment.vote(req.vote, function(err, post) {
             if(err) return next(err);

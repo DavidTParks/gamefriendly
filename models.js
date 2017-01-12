@@ -40,7 +40,7 @@ CommentSchema.method("vote", function(vote, callback) {
 var GameSessionSchema = new Schema({
     postedBy: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
     },
     region: {
       type: String,
@@ -62,7 +62,7 @@ var GameSessionSchema = new Schema({
     createdAt: {type: Date, default: Date.now},
     updatedAt: {type: Date, default: Date.now},
     platform: {
-      type: [String], 
+      type: [String],
       enum: ["Xbox One", "PS4", "PC"],
       required: true
     }
