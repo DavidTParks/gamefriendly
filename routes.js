@@ -230,7 +230,7 @@ router.put("/gamesessions/:uID/sessions/:gID", function(req, res) {
 */
 
 
-//DELETE /posts/:id/comments/:id
+//DELETE /gamesessions/:uID/sessions/:gID
 //Delete a specific gamesession
 router.delete("/gamesessions/:uID/sessions/:gID", function(req, res, next) {
     req.user.sessions.id(req.gamesession._id).remove(function(err) {
