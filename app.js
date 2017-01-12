@@ -17,7 +17,7 @@ app.use(cookieParser());
 //Mongoose Configuration
 var mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/newdb");
+mongoose.connect("mongodb://localhost:27017/newestDB");
 
 var db = mongoose.connection;
 

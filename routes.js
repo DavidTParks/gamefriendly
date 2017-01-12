@@ -229,20 +229,17 @@ router.put("/gamesessions/:uID/sessions/:gID", function(req, res) {
 });
 */
 
-/*
+
 //DELETE /posts/:id/comments/:id
-//Delete a specific comment
+//Delete a specific gamesession
 router.delete("/gamesessions/:uID/sessions/:gID", function(req, res) {
-    var gamesession = new GameSession(req.body);
-    req.user.sessions.pop(gamesession);
-    gamesession.remove(function(err) {
+    req.gamesession.remove(function(err) {
         req.user.save(function(err, user) {
             if(err) return next(err);
             res.json(user);
         });
     });
 });
-*/
 
 //GET specific post
 router.get("/posts/:pID", function(req, res, next) {
@@ -280,18 +277,18 @@ router.delete("/posts/:pID/comments/:cID", function(req, res) {
     });
 });
 
+/*
 //DELETE /posts/:id/comments/:id
 //Delete a specific gamesession
 router.delete("/gamesessions/:uID/sessions/:gID", function(req, res) {
     req.user.sessions.gamesession.remove(function(err) {
-        req.gamesessions.remove(function(err) {
-            req.user.save(function(err, user) {
-                if(err) return next(err);
-                res.json(user);
-            });
+        req.user.save(function(err, user) {
+            if(err) return next(err);
+            res.json(user);
         });
     });
 });
+*/
 
 //POST /posts/:pID/comments/:cID/vote-up
 //POST /posts/:pID/comments/:cID/vote-down
