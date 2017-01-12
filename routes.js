@@ -250,7 +250,7 @@ router.get("/posts/:pID", function(req, res, next) {
     res.json(req.post);
 });
 
-//POST /posts/:id/comments
+//POST /posts/:pID/comments
 // Route for creating comments
 router.post("/posts/:pID/comments", function(req, res, next) {
     req.post.comments.push(req.body);
@@ -281,22 +281,9 @@ router.delete("/posts/:pID/comments/:cID", function(req, res) {
     });
 });
 
-/*
-//DELETE /posts/:id/comments/:id
-//Delete a specific gamesession
-router.delete("/gamesessions/:uID/sessions/:gID", function(req, res) {
-    req.user.sessions.gamesession.remove(function(err) {
-        req.user.save(function(err, user) {
-            if(err) return next(err);
-            res.json(user);
-        });
-    });
-});
-*/
-
 //POST /posts/:pID/comments/:cID/vote-up
 //POST /posts/:pID/comments/:cID/vote-down
-//Vote on an comment
+//Vote on an comment on your post
 router.post("/posts/:pID/comments/:cID/vote-:dir", 
     function(req, res, next) {
         if(req.params.dir.search(/^(up|down)$/) == -1) {

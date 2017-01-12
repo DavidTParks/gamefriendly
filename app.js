@@ -17,7 +17,7 @@ app.use(cookieParser());
 //Mongoose Configuration
 var mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/newestDB");
+mongoose.connect("mongodb://localhost:27017/deletedbroute");
 
 var db = mongoose.connection;
 
