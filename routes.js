@@ -128,6 +128,7 @@ router.get("/logout", function(req, res, next) {
 //Route to get all users
 router.get("/users", function(req, res, next) {
     User.find({})
+                .lean()
                 .select('-password')
                 .exec(function(err, users) {
                     if(err) return next(err);
@@ -145,6 +146,7 @@ router.get("/users/:uID", function(req, res, next) {
 //Route to get all posts
 router.get("/posts", function(req, res, next) {
     Post.find({})
+                .lean()
                 .sort({createdAt: -1}) 
                 .exec(function(err, posts) {
                     if(err) return next(err);
@@ -171,6 +173,7 @@ router.post("/posts/:uID/", function(req, res, next) {
 // Route for returning all game sessions
 router.get("/gamesessions", function(req, res, next) {
     GameSession.find({})
+                .lean()
                 .sort({createdAt: -1}) 
                 .exec(function(err, sessions) {
                     if(err) return next(err);
@@ -184,7 +187,8 @@ router.get("/gamesessions/:platform/:game", function(req, res, next) {
     var platform = req.params.platform;
     var game = req.params.game;
     GameSession.find({platform: platform, game: game})
-                .sort({createdAt: -1}) 
+                .lean()
+                .sort({createdAt: -1})
                 .exec(function(err, sessions) {
                     if(err) return next(err);
                     if (!sessions.length) {
