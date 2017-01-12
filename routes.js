@@ -220,14 +220,12 @@ router.post("/gamesessions/:uID/", function(req, res, next) {
 
 //PUT /gamesessions/:uID/:gID
 //Edit a game session
-/*
 router.put("/gamesessions/:uID/sessions/:gID", function(req, res) {
-    req.gamesession.sessionupdate(req.body, function(err, result) {
+    req.user.sessions.id(req.gamesession._id).sessionupdate(req.body, function(err, result) {
         if(err) return next(err);
         res.json(result);
     });
 });
-*/
 
 
 //DELETE /gamesessions/:uID/sessions/:gID

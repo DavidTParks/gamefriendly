@@ -68,6 +68,11 @@ var GameSessionSchema = new Schema({
     }
 });
 
+GameSessionSchema.method("sessionupdate", function(updates, callback) {
+    Object.assign(this, updates, {updatedAt: new Date()});
+    this.parent().save(callback);
+});
+
 
 var PostSchema = new Schema({
     text: String,
