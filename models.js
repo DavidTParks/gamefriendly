@@ -13,7 +13,7 @@ var sortComments = function(a, b) {
 }
 
 var sortPosts = function(a, b) {
-    return b.createdAt - a.createdAt;
+    return b.updatedAt - a.updatedAt;
 }
 
 var CommentSchema = new Schema({
