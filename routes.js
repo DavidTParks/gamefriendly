@@ -232,11 +232,15 @@ router.put("/gamesessions/:uID/sessions/:gID", function(req, res) {
 
 //DELETE /posts/:id/comments/:id
 //Delete a specific gamesession
-router.delete("/gamesessions/:uID/sessions/:gID", function(req, res) {
-    req.gamesession.remove(function(err) {
+router.delete("/gamesessions/:uID/sessions/:gID", function(req, res, next) {
+    req.user.sessions.id(req.gamesession._id).remove(function(err) {
         req.user.save(function(err, user) {
             if(err) return next(err);
-            res.json(user);
+            req.gamesession.remove(function(err) {
+                if(err) return next(err);
+                res.json(user);
+                res.status(201);
+            })
         });
     });
 });
