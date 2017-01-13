@@ -231,7 +231,9 @@ router.put("/gamesessions/:uID/sessions/:gID", function(req, res, next) {
                                                        title: req.body.title,
                                                        description: req.body.description,
                                                        game: req.body.game,
-                                                       platform: req.body.platform}, function (err, game) {
+                                                       platform: req.body.platform,
+                                                       region: req.body.region,
+                                                       age: req.body.age}, {new: true}, function (err, game) {
           if (err) return next(err);
           res.json(game);
           res.status(201);
