@@ -227,11 +227,18 @@ router.post("/gamesessions/:uID/", function(req, res, next) {
 router.put("/gamesessions/:uID/sessions/:gID", function(req, res, next) {
     req.user.sessions.id(req.gamesession._id).sessionupdate(req.body, function(err, result) {
         if(err) return next(err);
+        GameSession.findByIdAndUpdate(req.params.gID, {updatedAt: new Date()}, function (err, game) {
+          if (err) return next(err);
+          res.json(game);
+          res.status(201);
+        });
+        /*
         req.gamesession.update(req.body, function(error, game) {
           if(error) return next(error);
           res.json(result);
           res.status(201);
         });
+        */
     });
 });
 
