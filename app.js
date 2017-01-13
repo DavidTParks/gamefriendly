@@ -51,6 +51,7 @@ app.use(session({
     })
 }));
 
+//Send the users session data to app locals
 app.use(function (req, res, next) {
     res.locals.currentUser = req.session.userId;
     next();
