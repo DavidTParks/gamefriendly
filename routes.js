@@ -223,17 +223,11 @@ router.post("/gamesessions/:uID/", function(req, res, next) {
 });
 
 //PUT /gamesessions/:uID/:gID
-//Edit a game session
+//Edit a game session. 
 router.put("/gamesessions/:uID/sessions/:gID", function(req, res, next) {
     req.user.sessions.id(req.gamesession._id).sessionupdate(req.body, function(err, result) {
         if(err) return next(err);
-        GameSession.findByIdAndUpdate(req.params.gID, {updatedAt: new Date(), 
-                                                       title: req.body.title,
-                                                       description: req.body.description,
-                                                       game: req.body.game,
-                                                       platform: req.body.platform,
-                                                       region: req.body.region,
-                                                       age: req.body.age}, {new: true}, function (err, game) {
+        GameSession.findByIdAndUpdate(req.params.gID, req.body, {new: true}, function (err, game) {
           if (err) return next(err);
           res.json(game);
           res.status(201);
