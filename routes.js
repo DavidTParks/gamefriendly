@@ -227,7 +227,11 @@ router.post("/gamesessions/:uID/", function(req, res, next) {
 router.put("/gamesessions/:uID/sessions/:gID", function(req, res, next) {
     req.user.sessions.id(req.gamesession._id).sessionupdate(req.body, function(err, result) {
         if(err) return next(err);
-        res.json(result);
+        req.gamesession.update(req.body, function(error, game) {
+          if(error) return next(error);
+          res.json(result);
+          res.status(201);
+        });
     });
 });
 

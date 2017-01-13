@@ -61,7 +61,7 @@ app.use(function (req, res, next) {
 app.use(routes);
 
 //Set the view enginge for ejs templates
-app.set("view engine", "ejs");
+//app.set("view engine", "ejs");
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next){
