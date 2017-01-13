@@ -88,7 +88,7 @@ router.post("/signup", function(req, res, next) {
 });
 
 //POST login
-//Logs in user and returns the session id
+//Logs in user and sets the session id
 router.post("/login", function(req, res, next) {
     if(req.body.email && req.body.password) {
         User.authenticate(req.body.email, req.body.password, function(error, user) {
