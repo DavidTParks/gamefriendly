@@ -1,14 +1,31 @@
 "use strict";
 
 var express = require("express");
-var app = express();
 var routes = require("./routes");
-
+var webpack = require('webpack');
+var config = require('./webpack.config');
 var jsonParser = require("body-parser").json;
 var logger = require("morgan");
 var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var MongoStore = require("connect-mongo")(session);
+var path = require('path');
+
+var app = express();
+
+//Setup webpack to serve our files
+var compiler = webpack(config);
+
+app.use(require('webpack-dev-middleware')(compiler, {
+  noInfo: true,
+  publicPath: config.output.publicPath
+}));
+
+app.get('/css/bootstrap.min.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build/css/bootstrap.min.css'));
+});
+
+app.use('/css', express.static(__dirname + '/src/css'));
 
 app.use(logger("dev"));
 app.use(jsonParser());
@@ -60,6 +77,10 @@ app.use(function (req, res, next) {
 
 //Use our routes
 app.use(routes);
+
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'src/html/index.html'));
+});
 
 //Set the view enginge for ejs templates
 //app.set("view engine", "ejs");
