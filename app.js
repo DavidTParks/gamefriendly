@@ -21,10 +21,6 @@ app.use(require('webpack-dev-middleware')(compiler, {
   publicPath: config.output.publicPath
 }));
 
-app.get('/css/bootstrap.min.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build/css/bootstrap.min.css'));
-});
-
 app.use('/css', express.static(__dirname + '/src/css'));
 
 app.use(logger("dev"));

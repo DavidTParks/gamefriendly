@@ -2,8 +2,8 @@
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
 */
-var ConcatSource = require("webpack-core/lib/ConcatSource");
-var OriginalSource = require("webpack-core/lib/OriginalSource");
+var ConcatSource = require("webpack-sources").ConcatSource;
+var OriginalSource = require("webpack-sources").OriginalSource;
 
 function accessorToObjectAccess(accessor) {
 	return accessor.map(function(a) {
@@ -70,12 +70,13 @@ UmdMainTemplatePlugin.prototype.apply = function(compilation) {
 
 		function externalsRequireArray(type) {
 			return replaceKeys(externals.map(function(m) {
+				var expr;
 				var request = m.request;
 				if(typeof request === "object") request = request[type];
 				if(Array.isArray(request)) {
-					var expr = "require(" + JSON.stringify(request[0]) + ")" + accessorToObjectAccess(request.slice(1));
+					expr = "require(" + JSON.stringify(request[0]) + ")" + accessorToObjectAccess(request.slice(1));
 				} else
-					var expr = "require(" + JSON.stringify(request) + ")";
+					expr = "require(" + JSON.stringify(request) + ")";
 				if(m.optional) {
 					expr = "(function webpackLoadOptionalExternalModule() { try { return " + expr + "; } catch(e) {} }())";
 				}
@@ -93,8 +94,9 @@ UmdMainTemplatePlugin.prototype.apply = function(compilation) {
 			return JSON.stringify(replaceKeys([].concat(library).pop()));
 		}
 
+		var amdFactory;
 		if(optionalExternals.length > 0) {
-			var amdFactory = "function webpackLoadOptionalExternalModuleAmd(" + externalsArguments(requiredExternals) + ") {\n" +
+			amdFactory = "function webpackLoadOptionalExternalModuleAmd(" + externalsArguments(requiredExternals) + ") {\n" +
 				"			return factory(" + (
 					requiredExternals.length > 0 ?
 					externalsArguments(requiredExternals) + ", " + externalsRootArray(optionalExternals) :
@@ -102,7 +104,7 @@ UmdMainTemplatePlugin.prototype.apply = function(compilation) {
 				) + ");\n" +
 				"		}";
 		} else {
-			var amdFactory = "factory";
+			amdFactory = "factory";
 		}
 
 		return new ConcatSource(new OriginalSource(
