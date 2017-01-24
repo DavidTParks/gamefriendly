@@ -2,8 +2,6 @@
 
 var express = require("express");
 var routes = require("./routes");
-var webpack = require('webpack');
-var config = require('./webpack.config');
 var jsonParser = require("body-parser").json;
 var logger = require("morgan");
 var cookieParser = require("cookie-parser");
@@ -19,7 +17,7 @@ app.use(cookieParser());
 //Mongoose Configuration
 var mongoose = require("mongoose");
 
-mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds127949.mlab.com:27949/heroku_0jx88s0b");
+mongoose.connect("mongodb://davidtparks:Rocket11352@ds127949.mlab.com:27949/heroku_0jx88s0b");
 
 var db = mongoose.connection;
 
