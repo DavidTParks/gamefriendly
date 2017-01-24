@@ -9,19 +9,8 @@ var logger = require("morgan");
 var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var MongoStore = require("connect-mongo")(session);
-var path = require('path');
 
 var app = express();
-
-//Setup webpack to serve our files
-var compiler = webpack(config);
-
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
-}));
-
-app.use('/css', express.static(__dirname + '/src/css'));
 
 app.use(logger("dev"));
 app.use(jsonParser());
@@ -30,7 +19,7 @@ app.use(cookieParser());
 //Mongoose Configuration
 var mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/deletedbroute");
+mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds127949.mlab.com:27949/heroku_0jx88s0b");
 
 var db = mongoose.connection;
 
@@ -73,10 +62,6 @@ app.use(function (req, res, next) {
 
 //Use our routes
 app.use(routes);
-
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'src/html/index.html'));
-});
 
 //Set the view enginge for ejs templates
 //app.set("view engine", "ejs");
