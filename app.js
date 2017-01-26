@@ -82,7 +82,7 @@ app.use(function(err, req, res, next){
 });
 
 //Running on localhost port 3000
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3001;
 
 app.listen(port, function() {
     console.log("Express server listening on port:", port);
