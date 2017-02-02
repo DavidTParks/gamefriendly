@@ -7,6 +7,9 @@ Nav = ReactBootstrap.Nav,
 NavDropdown = ReactBootstrap.NavDropdown,
 NavItem = ReactBootstrap.NavItem,
 DropdownButton = ReactBootstrap.DropdownButton,
+FormGroup = ReactBootstrap.FormGroup,
+Button = ReactBootstrap.Button,
+FormControl = ReactBootstrap.FormControl,
 MenuItem = ReactBootstrap.MenuItem;
 
 class App extends Component {
@@ -20,7 +23,7 @@ class App extends Component {
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">React-Bootstrap</a>
+              <a href="#">Browse</a>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
@@ -28,17 +31,22 @@ class App extends Component {
             <Nav>
               <NavItem eventKey={1} href="#">Link</NavItem>
               <NavItem eventKey={2} href="#">Link</NavItem>
-              <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+                <Navbar.Form inverse pullLeft>
+                 <FormGroup>
+                   <FormControl type="text" placeholder="Search for games" />
+                 </FormGroup>
+                 {' '}
+                 <Button type="submit">Search</Button>
+               </Navbar.Form>
+            </Nav>
+            <Nav pullRight>
+              <NavDropdown eventKey={3} title="Profile" id="basic-nav-dropdown">
                 <MenuItem eventKey={3.1}>Action</MenuItem>
                 <MenuItem eventKey={3.2}>Another action</MenuItem>
                 <MenuItem eventKey={3.3}>Something else here</MenuItem>
                 <MenuItem divider />
-                <MenuItem eventKey={3.3}>Separated link</MenuItem>
+                <MenuItem eventKey={3.3}>Logout</MenuItem>
               </NavDropdown>
-            </Nav>
-            <Nav pullRight>
-              <NavItem eventKey={1} href="#">Profile</NavItem>
-              <NavItem eventKey={2} href="#">Logout</NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
