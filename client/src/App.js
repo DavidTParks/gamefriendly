@@ -8,6 +8,8 @@ NavDropdown = ReactBootstrap.NavDropdown,
 NavItem = ReactBootstrap.NavItem,
 DropdownButton = ReactBootstrap.DropdownButton,
 FormGroup = ReactBootstrap.FormGroup,
+Jumbotron = ReactBootstrap.Jumbotron,
+PageHeader = ReactBootstrap.PageHeader,
 Button = ReactBootstrap.Button,
 FormControl = ReactBootstrap.FormControl,
 MenuItem = ReactBootstrap.MenuItem;
@@ -33,7 +35,7 @@ class App extends Component {
               <NavItem eventKey={2} href="#">Link</NavItem>
                 <Navbar.Form inverse pullLeft>
                  <FormGroup>
-                   <FormControl type="text" placeholder="Search for games" />
+                   <FormControl className="Search" type="text" placeholder="Search for games" />
                  </FormGroup>
                  {' '}
                  <Button type="submit">Search</Button>
@@ -50,6 +52,12 @@ class App extends Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
+        <Jumbotron className="Jumbotron">
+          <h1>Hello, world!</h1>
+          <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <p><Button bsStyle="primary">Learn more</Button></p>
+        </Jumbotron>
+        <PageHeader>Example page header <small>Subtext for header</small></PageHeader>
       </div>
     );
   }

@@ -14,8 +14,16 @@
   color: white;
 }
 
+.Search {
+  text-align: center;
+}
+
 .App-intro {
   font-size: large;
+}
+
+.Jumbotron {
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
