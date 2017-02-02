@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import * as ReactBootstrap from "react-bootstrap";
+import GameSessionCard from './GameSessionCard';
 var Navbar = ReactBootstrap.Navbar,
 Nav = ReactBootstrap.Nav,
 NavDropdown = ReactBootstrap.NavDropdown,
@@ -70,86 +71,30 @@ class App extends Component {
         <PageHeader>Recent Game Sessions</PageHeader>
         <Row className="global-grid">
           <Col xs={6} md={3}>
-            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
-             <h3>Thumbnail label</h3>
-             <p>Description</p>
-             <p>
-               <Button bsStyle="primary">Button</Button>&nbsp;
-               <Button bsStyle="default">Button</Button>
-             </p>
-           </Thumbnail>
+            <GameSessionCard />
           </Col>
           <Col xs={6} md={3}>
-            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
-             <h3>Thumbnail label</h3>
-             <p>Description</p>
-             <p>
-               <Button bsStyle="primary">Button</Button>&nbsp;
-               <Button bsStyle="default">Button</Button>
-             </p>
-           </Thumbnail>
+            <GameSessionCard />
           </Col>
           <Col xs={6} md={3}>
-            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
-             <h3>Thumbnail label</h3>
-             <p>Description</p>
-             <p>
-               <Button bsStyle="primary">Button</Button>&nbsp;
-               <Button bsStyle="default">Button</Button>
-             </p>
-           </Thumbnail>
+            <GameSessionCard />
           </Col>
           <Col xsHidden md={3}>
-            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
-             <h3>Thumbnail label</h3>
-             <p>Description</p>
-             <p>
-               <Button bsStyle="primary">Button</Button>&nbsp;
-               <Button bsStyle="default">Button</Button>
-             </p>
-           </Thumbnail>
+            <GameSessionCard />
          </Col>
         </Row>
         <Row className="global-grid">
           <Col xs={6} md={3}>
-            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
-             <h3>Thumbnail label</h3>
-             <p>Description</p>
-             <p>
-               <Button bsStyle="primary">Button</Button>&nbsp;
-               <Button bsStyle="default">Button</Button>
-             </p>
-           </Thumbnail>
+            <GameSessionCard />
           </Col>
           <Col xs={6} md={3}>
-            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
-             <h3>Thumbnail label</h3>
-             <p>Description</p>
-             <p>
-               <Button bsStyle="primary">Button</Button>&nbsp;
-               <Button bsStyle="default">Button</Button>
-             </p>
-           </Thumbnail>
+            <GameSessionCard />
           </Col>
           <Col xs={6} md={3}>
-            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
-             <h3>Thumbnail label</h3>
-             <p>Description</p>
-             <p>
-               <Button bsStyle="primary">Button</Button>&nbsp;
-               <Button bsStyle="default">Button</Button>
-             </p>
-           </Thumbnail>
+            <GameSessionCard />
           </Col>
           <Col xsHidden md={3}>
-            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
-             <h3>Thumbnail label</h3>
-             <p>Description</p>
-             <p>
-               <Button bsStyle="primary">Button</Button>&nbsp;
-               <Button bsStyle="default">Button</Button>
-             </p>
-           </Thumbnail>
+            <GameSessionCard />
           </Col>
         </Row>
       </div>
