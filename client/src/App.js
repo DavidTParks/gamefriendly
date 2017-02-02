@@ -42,6 +42,7 @@ class App extends Component {
                </Navbar.Form>
             </Nav>
             <Nav pullRight>
+              <NavItem eventKey={4} href="#"><Button navbar-btn bsSize="xsmall" bsStyle="primary">Create Session</Button></NavItem>
               <NavDropdown eventKey={3} title="Profile" id="basic-nav-dropdown">
                 <MenuItem eventKey={3.1}>Action</MenuItem>
                 <MenuItem eventKey={3.2}>Another action</MenuItem>
