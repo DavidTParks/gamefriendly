@@ -29,7 +29,7 @@ class App extends Component {
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">Browse</a>
+              <a href="#">GameFriendly.io</a>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
@@ -45,6 +45,10 @@ class App extends Component {
                  <Button type="submit">Search</Button>
                </Navbar.Form>
             </Nav>
+            <Nav PullRight>
+
+            </Nav>
+            /*
             <Nav pullRight>
               <NavItem eventKey={4} href="#"><Button navbar-btn bsSize="xsmall" bsStyle="primary">Create Game Session</Button></NavItem>
               <NavDropdown eventKey={3} title="Profile" id="basic-nav-dropdown">
@@ -54,6 +58,7 @@ class App extends Component {
                 <MenuItem divider />
                 <MenuItem eventKey={3.3}>Logout</MenuItem>
               </NavDropdown>
+              */
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -64,7 +69,7 @@ class App extends Component {
         </Jumbotron>
         <PageHeader>Recent Game Sessions</PageHeader>
         <Row className="global-grid">
-          <Col xs={6} md={4}>
+          <Col xs={6} md={3}>
             <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
              <h3>Thumbnail label</h3>
              <p>Description</p>
@@ -74,7 +79,7 @@ class App extends Component {
              </p>
            </Thumbnail>
           </Col>
-          <Col xs={6} md={4}>
+          <Col xs={6} md={3}>
             <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
              <h3>Thumbnail label</h3>
              <p>Description</p>
@@ -84,7 +89,59 @@ class App extends Component {
              </p>
            </Thumbnail>
           </Col>
-          <Col xsHidden md={4}>
+          <Col xs={6} md={3}>
+            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
+             <h3>Thumbnail label</h3>
+             <p>Description</p>
+             <p>
+               <Button bsStyle="primary">Button</Button>&nbsp;
+               <Button bsStyle="default">Button</Button>
+             </p>
+           </Thumbnail>
+          </Col>
+          <Col xsHidden md={3}>
+            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
+             <h3>Thumbnail label</h3>
+             <p>Description</p>
+             <p>
+               <Button bsStyle="primary">Button</Button>&nbsp;
+               <Button bsStyle="default">Button</Button>
+             </p>
+           </Thumbnail>
+         </Col>
+        </Row>
+        <Row className="global-grid">
+          <Col xs={6} md={3}>
+            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
+             <h3>Thumbnail label</h3>
+             <p>Description</p>
+             <p>
+               <Button bsStyle="primary">Button</Button>&nbsp;
+               <Button bsStyle="default">Button</Button>
+             </p>
+           </Thumbnail>
+          </Col>
+          <Col xs={6} md={3}>
+            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
+             <h3>Thumbnail label</h3>
+             <p>Description</p>
+             <p>
+               <Button bsStyle="primary">Button</Button>&nbsp;
+               <Button bsStyle="default">Button</Button>
+             </p>
+           </Thumbnail>
+          </Col>
+          <Col xs={6} md={3}>
+            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
+             <h3>Thumbnail label</h3>
+             <p>Description</p>
+             <p>
+               <Button bsStyle="primary">Button</Button>&nbsp;
+               <Button bsStyle="default">Button</Button>
+             </p>
+           </Thumbnail>
+          </Col>
+          <Col xsHidden md={3}>
             <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
              <h3>Thumbnail label</h3>
              <p>Description</p>
