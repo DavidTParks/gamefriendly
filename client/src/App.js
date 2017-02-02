@@ -12,6 +12,10 @@ Jumbotron = ReactBootstrap.Jumbotron,
 PageHeader = ReactBootstrap.PageHeader,
 Button = ReactBootstrap.Button,
 FormControl = ReactBootstrap.FormControl,
+Row = ReactBootstrap.Row,
+Thumbnail = ReactBootstrap.Thumbnail,
+Col = ReactBootstrap.Col,
+FormControl = ReactBootstrap.FormControl,
 MenuItem = ReactBootstrap.MenuItem;
 
 class App extends Component {
@@ -42,7 +46,7 @@ class App extends Component {
                </Navbar.Form>
             </Nav>
             <Nav pullRight>
-              <NavItem eventKey={4} href="#"><Button navbar-btn bsSize="xsmall" bsStyle="primary">Create Session</Button></NavItem>
+              <NavItem eventKey={4} href="#"><Button navbar-btn bsSize="xsmall" bsStyle="primary">Create Game Session</Button></NavItem>
               <NavDropdown eventKey={3} title="Profile" id="basic-nav-dropdown">
                 <MenuItem eventKey={3.1}>Action</MenuItem>
                 <MenuItem eventKey={3.2}>Another action</MenuItem>
@@ -54,11 +58,43 @@ class App extends Component {
           </Navbar.Collapse>
         </Navbar>
         <Jumbotron className="Jumbotron">
-          <h1>Hello, world!</h1>
-          <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <h1>Welcome to GameFriendly.io!</h1>
+          <p>Create Game Sessions, party up, and meet new people. Any games, any platforms.</p>
           <p><Button bsStyle="primary">Learn more</Button></p>
         </Jumbotron>
-        <PageHeader>Example page header <small>Subtext for header</small></PageHeader>
+        <PageHeader>Recent Game Sessions</PageHeader>
+        <Row className="global-grid">
+          <Col xs={6} md={4}>
+            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
+             <h3>Thumbnail label</h3>
+             <p>Description</p>
+             <p>
+               <Button bsStyle="primary">Button</Button>&nbsp;
+               <Button bsStyle="default">Button</Button>
+             </p>
+           </Thumbnail>
+          </Col>
+          <Col xs={6} md={4}>
+            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
+             <h3>Thumbnail label</h3>
+             <p>Description</p>
+             <p>
+               <Button bsStyle="primary">Button</Button>&nbsp;
+               <Button bsStyle="default">Button</Button>
+             </p>
+           </Thumbnail>
+          </Col>
+          <Col xsHidden md={4}>
+            <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
+             <h3>Thumbnail label</h3>
+             <p>Description</p>
+             <p>
+               <Button bsStyle="primary">Button</Button>&nbsp;
+               <Button bsStyle="default">Button</Button>
+             </p>
+           </Thumbnail>
+          </Col>
+        </Row>
       </div>
     );
   }
