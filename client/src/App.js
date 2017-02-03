@@ -4,6 +4,7 @@ import './App.css';
 import * as ReactBootstrap from "react-bootstrap";
 import GameSessionCard from './GameSessionCard';
 import Searchbar from './Searchbar';
+import Navigation from './Navigation';
 var Navbar = ReactBootstrap.Navbar,
 Nav = ReactBootstrap.Nav,
 NavDropdown = ReactBootstrap.NavDropdown,
@@ -24,30 +25,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar inverse collapseOnSelect>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">GameFriendly.io</a>
-            </Navbar.Brand>
-            <Navbar.Toggle />
-          </Navbar.Header>
-          <Navbar.Collapse>
-            <Nav>
-              <NavItem eventKey={1} href="#">Browse</NavItem>
-                <Searchbar />
-            </Nav>
-            <Nav pullRight>
-              <NavItem eventKey={4} href="#"><Button navbar-btn bsSize="xsmall" bsStyle="primary">Create Game Session</Button></NavItem>
-              <NavDropdown eventKey={3} title="Profile" id="basic-nav-dropdown">
-                <MenuItem eventKey={3.1}>Action</MenuItem>
-                <MenuItem eventKey={3.2}>Another action</MenuItem>
-                <MenuItem eventKey={3.3}>Something else here</MenuItem>
-                <MenuItem divider />
-                <MenuItem eventKey={3.3}>Logout</MenuItem>
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+        <Navigation/>
         <Jumbotron className="Jumbotron">
           <h1>Welcome to GameFriendly.io!</h1>
           <p>Create Game Sessions, party up, and meet new people. Any games, any platforms.</p>
