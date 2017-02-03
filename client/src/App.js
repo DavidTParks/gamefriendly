@@ -24,10 +24,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Gamefriendly.io</h2>
-        </div>
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
