@@ -27,7 +27,7 @@ class Jumbo extends Component {
       <Jumbotron className="Jumbotron">
         <h1>Welcome to GameFriendly.io!</h1>
         <p>Create Game Sessions, party up, and meet new people. Any games, any platforms.</p>
-        <p><Button bsStyle="primary">Start playing</Button></p>
+        <p><Button bsStyle="info">Start playing</Button></p>
       </Jumbotron>
     );
   }

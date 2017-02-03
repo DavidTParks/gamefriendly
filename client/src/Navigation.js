@@ -37,7 +37,7 @@ class Navigation extends Component {
               <Searchbar />
           </Nav>
           <Nav pullRight>
-            <NavItem eventKey={4} href="#"><Button navbar-btn bsSize="xsmall" bsStyle="primary">Create Game Session</Button></NavItem>
+            <NavItem eventKey={4} href="#"><Button navbar-btn bsSize="xsmall" bsStyle="info">Create Game Session</Button></NavItem>
             <NavDropdown eventKey={3} title="Profile" id="basic-nav-dropdown">
               <MenuItem eventKey={3.1}>Action</MenuItem>
               <MenuItem eventKey={3.2}>Another action</MenuItem>

@@ -1,10 +1,20 @@
 .App {
   text-align: center;
+  background-color: #e8e8e8;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+}
+
+.btn-info,
+.btn-info:hover,
+.btn-info:active,
+.btn-info:visited,
+.btn-info:focus {
+    background-color: #8064A2;
+    border-color: #8064A2;
 }
 
 .App-header {

@@ -28,7 +28,7 @@ class Searchbar extends Component {
          <FormControl className="Search" type="text" placeholder="Search for games" />
        </FormGroup>
        {' '}
-       <Button type="submit">Search</Button>
+       <Button bsStyle="info" type="submit">Search</Button>
      </Navbar.Form>
     );
   }
