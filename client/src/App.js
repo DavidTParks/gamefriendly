@@ -37,14 +37,9 @@ class App extends Component {
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav>
-              <NavItem eventKey={1} href="#">Link</NavItem>
-              <NavItem eventKey={2} href="#">Link</NavItem>
+              <NavItem eventKey={1} href="#">Browse</NavItem>
                 <Searchbar />
             </Nav>
-            <Nav PullRight>
-
-            </Nav>
-            /*
             <Nav pullRight>
               <NavItem eventKey={4} href="#"><Button navbar-btn bsSize="xsmall" bsStyle="primary">Create Game Session</Button></NavItem>
               <NavDropdown eventKey={3} title="Profile" id="basic-nav-dropdown">
@@ -54,44 +49,14 @@ class App extends Component {
                 <MenuItem divider />
                 <MenuItem eventKey={3.3}>Logout</MenuItem>
               </NavDropdown>
-              */
             </Nav>
           </Navbar.Collapse>
         </Navbar>
         <Jumbotron className="Jumbotron">
           <h1>Welcome to GameFriendly.io!</h1>
           <p>Create Game Sessions, party up, and meet new people. Any games, any platforms.</p>
-          <p><Button bsStyle="primary">Learn more</Button></p>
+          <p><Button bsStyle="primary">Start playing</Button></p>
         </Jumbotron>
-        <PageHeader>Recent Game Sessions</PageHeader>
-        <Row className="global-grid">
-          <Col xs={6} md={3}>
-            <GameSessionCard />
-          </Col>
-          <Col xs={6} md={3}>
-            <GameSessionCard />
-          </Col>
-          <Col xs={6} md={3}>
-            <GameSessionCard />
-          </Col>
-          <Col xsHidden md={3}>
-            <GameSessionCard />
-         </Col>
-        </Row>
-        <Row className="global-grid">
-          <Col xs={6} md={3}>
-            <GameSessionCard />
-          </Col>
-          <Col xs={6} md={3}>
-            <GameSessionCard />
-          </Col>
-          <Col xs={6} md={3}>
-            <GameSessionCard />
-          </Col>
-          <Col xsHidden md={3}>
-            <GameSessionCard />
-          </Col>
-        </Row>
       </div>
     );
   }

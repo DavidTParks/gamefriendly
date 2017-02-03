@@ -18,6 +18,11 @@
   text-align: center;
 }
 
+.Discordbutton {
+  background-color: #4d2596;
+  color: white;
+}
+
 .App-intro {
   font-size: large;
 }
