@@ -29,6 +29,7 @@
 
 .Jumbotron {
   text-align: center;
+  font-size: large;
 }
 
 @keyframes App-logo-spin {
