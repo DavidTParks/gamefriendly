@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import * as ReactBootstrap from "react-bootstrap";
-import GameSessionCard from './GameSessionCard';
 import Searchbar from './Searchbar';
-import Navigation from './Navigation';
-import Jumbo from './Jumbo';
 var Navbar = ReactBootstrap.Navbar,
 Nav = ReactBootstrap.Nav,
 NavDropdown = ReactBootstrap.NavDropdown,
@@ -17,20 +14,23 @@ PageHeader = ReactBootstrap.PageHeader,
 Button = ReactBootstrap.Button,
 FormControl = ReactBootstrap.FormControl,
 Row = ReactBootstrap.Row,
+DropdownButton = ReactBootstrap.DropdownButton,
+ButtonGroup = ReactBootstrap.ButtonGroup,
 Thumbnail = ReactBootstrap.Thumbnail,
 Col = ReactBootstrap.Col,
 FormControl = ReactBootstrap.FormControl,
 MenuItem = ReactBootstrap.MenuItem;
 
-class App extends Component {
+class Jumbo extends Component {
   render() {
     return (
-      <div className="App">
-        <Navigation/>
-        <Jumbo/>
-      </div>
+      <Jumbotron className="Jumbotron">
+        <h1>Welcome to GameFriendly.io!</h1>
+        <p>Create Game Sessions, party up, and meet new people. Any games, any platforms.</p>
+        <p><Button bsStyle="primary">Start playing</Button></p>
+      </Jumbotron>
     );
   }
 }
 
-export default App;
+export default Jumbo;
