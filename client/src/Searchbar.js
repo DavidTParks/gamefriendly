@@ -20,26 +20,18 @@ Col = ReactBootstrap.Col,
 FormControl = ReactBootstrap.FormControl,
 MenuItem = ReactBootstrap.MenuItem;
 
-class GameSessionCard extends Component {
+class Searchbar extends Component {
   render() {
     return (
-      <Thumbnail src={this.props.srcimage} alt="242x200">
-       <h3>{this.props.title}</h3>
-       <p>{this.props.description}</p>
-       <p>Platform: Xbox One</p>
-       <p>
-       <ButtonGroup justified>
-          <Button bsStyle="info" href="#">Join</Button>
-          <Button bsStyle="primary" href="#">Favorite</Button>
-          <DropdownButton title="Dropdown" id="bg-justified-dropdown">
-            <MenuItem eventKey="1">Dropdown link</MenuItem>
-            <MenuItem eventKey="2">Dropdown link</MenuItem>
-          </DropdownButton>
-        </ButtonGroup>
-       </p>
-     </Thumbnail>
+      <Navbar.Form pullLeft>
+       <FormGroup>
+         <FormControl className="Search" type="text" placeholder="Search for games" />
+       </FormGroup>
+       {' '}
+       <Button type="submit">Search</Button>
+     </Navbar.Form>
     );
   }
 }
 
-export default GameSessionCard;
+export default Searchbar;

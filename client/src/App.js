@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import * as ReactBootstrap from "react-bootstrap";
 import GameSessionCard from './GameSessionCard';
+import Searchbar from './Searchbar';
 var Navbar = ReactBootstrap.Navbar,
 Nav = ReactBootstrap.Nav,
 NavDropdown = ReactBootstrap.NavDropdown,
@@ -38,13 +39,7 @@ class App extends Component {
             <Nav>
               <NavItem eventKey={1} href="#">Link</NavItem>
               <NavItem eventKey={2} href="#">Link</NavItem>
-                <Navbar.Form inverse pullLeft>
-                 <FormGroup>
-                   <FormControl className="Search" type="text" placeholder="Search for games" />
-                 </FormGroup>
-                 {' '}
-                 <Button type="submit">Search</Button>
-               </Navbar.Form>
+                <Searchbar />
             </Nav>
             <Nav PullRight>
 
