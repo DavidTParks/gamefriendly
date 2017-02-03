@@ -6,6 +6,7 @@ import GameSessionCard from './GameSessionCard';
 import Searchbar from './Searchbar';
 import Navigation from './Navigation';
 import Jumbo from './Jumbo';
+
 var Navbar = ReactBootstrap.Navbar,
 Nav = ReactBootstrap.Nav,
 NavDropdown = ReactBootstrap.NavDropdown,
