@@ -21,33 +21,70 @@ Col = ReactBootstrap.Col,
 FormControl = ReactBootstrap.FormControl,
 MenuItem = ReactBootstrap.MenuItem;
 
+function GuestGreeting(props) {
+  return (
+    <Navbar inverse collapseOnSelect>
+      <Navbar.Header>
+        <Navbar.Brand>
+          <a href="#">GameFriendly.io</a>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+      </Navbar.Header>
+      <Navbar.Collapse>
+        <Nav>
+          <NavItem eventKey={1} href="#">Browse</NavItem>
+            <Searchbar />
+        </Nav>
+        <Nav pullRight>
+          <NavItem eventKey={4} href="#"><Button navbar-btn bsSize="xsmall" bsStyle="info">Create Game Session</Button></NavItem>
+          <NavItem eventKey={1} href="#">Login</NavItem>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
+}
+
+function UserGreeting(props) {
+  return (
+    <Navbar inverse collapseOnSelect>
+      <Navbar.Header>
+        <Navbar.Brand>
+          <a href="#">GameFriendly.io</a>
+        </Navbar.Brand>
+        <Navbar.Toggle />
+      </Navbar.Header>
+      <Navbar.Collapse>
+        <Nav>
+          <NavItem eventKey={1} href="#">Browse</NavItem>
+            <Searchbar />
+        </Nav>
+        <Nav pullRight>
+          <NavItem eventKey={4} href="#"><Button navbar-btn bsSize="xsmall" bsStyle="info">Create Game Session</Button></NavItem>
+          <NavDropdown eventKey={3} title="Profile" id="basic-nav-dropdown">
+            <MenuItem eventKey={3.1}>Action</MenuItem>
+            <MenuItem eventKey={3.2}>Another action</MenuItem>
+            <MenuItem eventKey={3.3}>Something else here</MenuItem>
+            <MenuItem divider />
+            <MenuItem eventKey={3.3}>Logout</MenuItem>
+          </NavDropdown>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
+}
+
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+}
+
 class Navigation extends Component {
   render() {
     return (
-      <Navbar inverse collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href="#">GameFriendly.io</a>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            <NavItem eventKey={1} href="#">Browse</NavItem>
-              <Searchbar />
-          </Nav>
-          <Nav pullRight>
-            <NavItem eventKey={4} href="#"><Button navbar-btn bsSize="xsmall" bsStyle="info">Create Game Session</Button></NavItem>
-            <NavDropdown eventKey={3} title="Profile" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Action</MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
-              <MenuItem divider />
-              <MenuItem eventKey={3.3}>Logout</MenuItem>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <Greeting isLoggedIn={this.props.isLoggedIn} />
     );
   }
 }
