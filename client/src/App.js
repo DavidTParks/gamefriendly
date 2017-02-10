@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navigation isLoggedIn={false} />
-        <Jumbo/>
+        <Jumbo />
       </div>
     );
   }

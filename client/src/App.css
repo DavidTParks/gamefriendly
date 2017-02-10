@@ -17,6 +17,16 @@
     border-color: #8064A2;
 }
 
+.login-button,
+.login-button:hover,
+.login-button:active,
+.login-button:visited,
+.login-button:focus {
+  background-color: #8064A2;
+  border-color: #8064A2;
+  color: white;
+}
+
 .App-header {
   background-color: #222;
   height: 170px;

@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import * as ReactBootstrap from "react-bootstrap";
 import Searchbar from './Searchbar';
+import LoginModal from './LoginModal';
 var Navbar = ReactBootstrap.Navbar,
 Nav = ReactBootstrap.Nav,
 NavDropdown = ReactBootstrap.NavDropdown,
@@ -36,8 +37,7 @@ function GuestGreeting(props) {
             <Searchbar />
         </Nav>
         <Nav pullRight>
-          <NavItem eventKey={4} href="#"><Button navbar-btn bsSize="xsmall" bsStyle="info">Create Game Session</Button></NavItem>
-          <NavItem eventKey={1} href="#">Login</NavItem>
+          <NavItem eventKey={3} href="#"><LoginModal /></NavItem>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
@@ -61,9 +61,9 @@ function UserGreeting(props) {
         <Nav pullRight>
           <NavItem eventKey={4} href="#"><Button navbar-btn bsSize="xsmall" bsStyle="info">Create Game Session</Button></NavItem>
           <NavDropdown eventKey={3} title="Profile" id="basic-nav-dropdown">
-            <MenuItem eventKey={3.1}>Action</MenuItem>
-            <MenuItem eventKey={3.2}>Another action</MenuItem>
-            <MenuItem eventKey={3.3}>Something else here</MenuItem>
+            <MenuItem eventKey={3.1}>Profile</MenuItem>
+            <MenuItem eventKey={3.2}>Your Sessions</MenuItem>
+            <MenuItem eventKey={3.3}>Edit Profile else here</MenuItem>
             <MenuItem divider />
             <MenuItem eventKey={3.3}>Logout</MenuItem>
           </NavDropdown>
