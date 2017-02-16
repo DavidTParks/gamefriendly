@@ -1,20 +1,29 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import GameSessionCard from './GameSessionCard';
-import Searchbar from './Searchbar';
-import Navigation from './Navigation';
-import Jumbo from './Jumbo';
+import SearchForm from './Components/SearchForm';
+import Searchbar from './Components/Searchbar';
 
-class App extends Component {
+export default class App extends Component {
+
+  constructor() {
+    super();
+  }
+
   render() {
     return (
-      <div className="App">
-        <Navigation isLoggedIn={false} />
-        <Jumbo />
+      <div>
+        <div className="main-header">
+          <div className="inner">
+            <h1 className="main-title">Gamefriendly.io</h1>
+            <h1 className="browse-button" href="">Browse</h1>
+            <h1 className="create-session">Create Session</h1>
+            <SearchForm />
+          </div>
+        </div>
+        <div className="main-content">
+        </div>
       </div>
     );
   }
 }
-
-export default App;

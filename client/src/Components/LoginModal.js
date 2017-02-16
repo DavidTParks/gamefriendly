@@ -51,7 +51,7 @@ class LoginModal extends Component {
   render() {
     return(
       <div>
-        <Button className="login-button" bsSize = "small" onClick={this.open}>Login/Signup</Button>
+        <Button className="login-button" bsSize = "xsmall" onClick={this.open}>Login/Signup</Button>
         <div>
           <Modal className="modal-container"
             show={this.state.showModal}
