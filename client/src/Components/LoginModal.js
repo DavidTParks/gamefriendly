@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
 import * as ReactBootstrap from "react-bootstrap";
 import Searchbar from './Searchbar';
 var Navbar = ReactBootstrap.Navbar,

@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-import logo from '../logo.svg';
-import '../App.css';
+import React from 'react';
 import * as ReactBootstrap from "react-bootstrap";
 var Navbar = ReactBootstrap.Navbar,
 Nav = ReactBootstrap.Nav,
@@ -16,27 +14,22 @@ Row = ReactBootstrap.Row,
 DropdownButton = ReactBootstrap.DropdownButton,
 ButtonGroup = ReactBootstrap.ButtonGroup,
 Thumbnail = ReactBootstrap.Thumbnail,
-Tooltip = ReactBootstrap.Tooltip,
 Col = ReactBootstrap.Col,
+Grid = ReactBootstrap.Grid,
 FormControl = ReactBootstrap.FormControl,
 MenuItem = ReactBootstrap.MenuItem;
 
-class GameSessionCard extends Component {
-  render() {
-    return (
-      <Thumbnail relative src="https://blzgdapipro-a.akamaihd.net/media/screenshot/soldier-76-screenshot-002.jpg" alt="242x200">
-       <h3>{this.props.title}</h3>
-       <p>{this.props.description}</p>
-       <p>Platform: Xbox One</p>
-       <p>
-       <ButtonGroup justified>
-          <Button bsStyle="info" href="#">Join</Button>
-          <Button className="Discordbutton" href="#">Open Discord</Button>
-        </ButtonGroup>
-       </p>
-     </Thumbnail>
-    );
-  }
-}
+const GameSessionCard = props => (
+  <li className="game-card">
+    <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
+      <h3>{props.title}</h3>
+      <p>{props.game}</p>
+      <p>
+        <Button bsStyle="primary">Button</Button>&nbsp;
+        <Button bsStyle="default">Button</Button>
+      </p>
+    </Thumbnail>
+  </li>
+);
 
 export default GameSessionCard;

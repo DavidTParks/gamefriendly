@@ -118,6 +118,7 @@ button {
 
 .main-title {
   float: left;
+  color: #8064A2;
   font-size: 1.4em;
   line-height: 80px;
   text-transform: uppercase;
@@ -180,8 +181,20 @@ button {
   margin: auto;
 }
 
+.session-list a {
+  display: block;
+  margin: auto;
+}
+
 .gif-wrap {
   background-color: #fff;
+  margin-bottom: .8em;
+  position: relative;
+}
+
+.game-card {
+  background-color: #fff;
+  margin-top: 92px;
   margin-bottom: .8em;
   position: relative;
 }
