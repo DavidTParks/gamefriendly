@@ -78,6 +78,7 @@ a {
   text-decoration: none;
 }
 
+
 ul,
 li {
   margin: 0;
@@ -146,6 +147,14 @@ button {
   margin: 0;
 }
 
+.thumbs {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  color: #f6f7f7;
+  padding : 5px;
+  margin: 6px;
+}
+
 .search-form input:only-of-type {
   width: 100%;
   margin-right: -40px;
@@ -186,16 +195,19 @@ button {
   margin: auto;
 }
 
+.session-list li {
+  float: left;
+  width: 33.33333333%;
+  padding: 0px;
+  margin: 0;
+}
+
 .gif-wrap {
-  background-color: #fff;
-  margin-bottom: .8em;
   position: relative;
 }
 
 .game-card {
   background-color: #fff;
-  margin-top: 92px;
-  margin-bottom: .8em;
   position: relative;
 }
 
@@ -210,7 +222,7 @@ button {
 .inner,
 .main-content {
   width: 90%;
-  max-width: 1025px;
+  max-width: 1100px;
   margin: auto;
 }
 
@@ -248,7 +260,6 @@ button {
 @media (min-width: 0) and (max-width: 549px) {
   .gif-list li {
     text-align: center;
-    margin: 20px 0 0;
     font-size: 0;
   }
 }
@@ -260,7 +271,7 @@ button {
     margin: 0;
   }
   .gif-wrap img {
-    height: 235px;
+    height: 200px;
   }
   .gif-list .no-gifs {
     float: none;
@@ -276,7 +287,7 @@ button {
 
 @media (min-width: 769px) {
   body {
-    padding-top: 115px;
+    padding-top: 125px;
   }
   .main-title {
     float: left;

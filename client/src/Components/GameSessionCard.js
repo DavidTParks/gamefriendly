@@ -20,14 +20,14 @@ FormControl = ReactBootstrap.FormControl,
 MenuItem = ReactBootstrap.MenuItem;
 
 const GameSessionCard = props => (
-  <li className="game-card">
-    <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
+  <li className="gif-wrap">
+    <Thumbnail className="thumbs">
       <h3>{props.title}</h3>
-      <p>{props.game}</p>
-      <p>
-        <Button bsStyle="primary">Button</Button>&nbsp;
-        <Button bsStyle="default">Button</Button>
-      </p>
+      <h4>{props.game}</h4>
+      <h4>{props.platform}</h4>
+      <h5>Region: {props.region}</h5>
+      <h5>{props.description}</h5>
+      <h5>Last updated 7 mins ago</h5>
     </Thumbnail>
   </li>
 );
