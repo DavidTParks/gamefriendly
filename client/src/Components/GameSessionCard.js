@@ -23,7 +23,7 @@ MenuItem = ReactBootstrap.MenuItem;
 
 const GameSessionCard = props => (
   <li className="gif-wrap">
-    <Thumbnail className="thumbs" src="http://cdn.wallpapersafari.com/8/2/sglFpm.png" alt="242x200">
+    <Thumbnail className="thumbs" src="https://i.ytimg.com/vi/73ZbNehh_HQ/maxresdefault.jpg" alt="242x200">
       <h4 className="card-title">{props.title}</h4>
       <h4>{props.game}</h4>
       <h4>{props.platform}</h4>

@@ -10,7 +10,7 @@ const SessionList = props => {
   const resultsLength = results.length;
   let sessions;
   if (results.length) {
-    sessions = results.map(session => <GameSession title={session.title} platform={session.platform} key={session._id} game={session.game} description={session.description} region={session.region}/>);
+    sessions = results.map(session => <GameSession title={session.title} platform={session.platform} key={session._id} game={session.game} description={session.description} region={session.region} updatedAt={session.updatedAt} postedBy={session.postedBy}/>);
     console.log(sessions);
   } else {
     sessions = <NoSessions />
