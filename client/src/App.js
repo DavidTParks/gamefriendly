@@ -41,7 +41,7 @@ export default class App extends Component {
       <div>
         <div className="main-header">
           <div className="inner">
-            <h1 className="main-title" href="#">Gamefriendly.io</h1>
+            <h1 className="main-title"><a href="index.html">Gamefriendly.io</a></h1>
             <h1 className="browse-button" href="#main-content">Browse</h1>
             <h1 className="create-session">Create Session</h1>
             <SearchForm onSearch={this.performSearch}/>
