@@ -190,7 +190,7 @@ router.get("/gamesessions/:platform/:game", function(req, res, next) {
     GameSession.find({platform: platform, game: game})
                 .lean()
                 .sort({createdAt: -1})
-                .limit(20)
+                .limit(9)
                 .exec(function(err, sessions) {
                     if(err) return next(err);
                     if (!sessions.length) {
@@ -209,6 +209,7 @@ router.get("/gamesessions/:game", function(req, res, next) {
     GameSession.find({game: game})
                 .lean()
                 .sort({createdAt: -1})
+                .limit(9)
                 .exec(function(err, sessions) {
                     if(err) return next(err);
                     if (!sessions.length) {
