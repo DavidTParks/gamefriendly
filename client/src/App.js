@@ -42,7 +42,7 @@ export default class App extends Component {
         <div className="main-header">
           <div className="inner">
             <h1 className="main-title">Gamefriendly.io</h1>
-            <h1 className="browse-button">Browse</h1>
+            <h1 className="browse-button" href="#main-content">Browse</h1>
             <h1 className="create-session">Create Session</h1>
             <SearchForm />
           </div>

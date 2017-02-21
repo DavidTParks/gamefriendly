@@ -202,6 +202,12 @@ button {
   margin: 0;
 }
 
+.results-badge {
+  margin-top: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
 .updated-status {
   color: #8064A2;
   text-align: center;
