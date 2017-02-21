@@ -21,17 +21,30 @@ Grid = ReactBootstrap.Grid,
 FormControl = ReactBootstrap.FormControl,
 MenuItem = ReactBootstrap.MenuItem;
 
-const GameSessionCard = props => (
-  <li className="gif-wrap">
-    <Thumbnail className="thumbs" src="https://i.ytimg.com/vi/73ZbNehh_HQ/maxresdefault.jpg" alt="242x200">
-      <h4 className="card-title">{props.title}</h4>
-      <h4>{props.game}</h4>
-      <h4>{props.platform}</h4>
-      <h5>{props.description}</h5>
-      <h5 className="region-identifier">{props.region}</h5>
-      <Button bsStyle="primary" className="Discordbutton">Join Discord</Button>
-    </Thumbnail>
-  </li>
-);
+const GameSessionCard = props => {
+  let imgSrc;
+  if(props.game === "Overwatch") {
+    imgSrc = "http://www.hdwallpaper.nu/wp-content/uploads/2016/05/overwatch-all-heroes-wallpaper-hd.jpg";
+  } else if(props.game === "Arma 3") {
+    imgSrc = "https://i.ytimg.com/vi/73ZbNehh_HQ/maxresdefault.jpg";
+  } else if(props.game === "League of Legends") {
+    imgSrc = "https://tctechcrunch2011.files.wordpress.com/2015/12/league-of-legends.png?w=1372";
+  } else {
+    imgSrc = "http://www.garrysmod.com/wp-content/uploads/2013/05/garrysmod2.png";
+  }
+
+  return (
+    <li className="gif-wrap">
+      <Thumbnail className="thumbs" src={imgSrc} alt="242x200">
+        <h4 className="card-title">{props.title}</h4>
+        <h4>{props.game}</h4>
+        <h4>{props.platform}</h4>
+        <h5>{props.description}</h5>
+        <h5 className="region-identifier">{props.region}</h5>
+        <Button bsStyle="primary" className="Discordbutton">Join Discord</Button>
+      </Thumbnail>
+    </li>
+  );
+}
 
 export default GameSessionCard;

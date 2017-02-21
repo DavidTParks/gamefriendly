@@ -1,5 +1,5 @@
 import React from 'react';
-import GameSession from './GameSessionCard';
+import GameSessionCard from './GameSessionCard';
 import NoSessions from './NoSessions';
 import * as ReactBootstrap from "react-bootstrap";
 var Badge = ReactBootstrap.Badge;
@@ -10,7 +10,7 @@ const SessionList = props => {
   const resultsLength = results.length;
   let sessions;
   if (results.length) {
-    sessions = results.map(session => <GameSession title={session.title} platform={session.platform} key={session._id} game={session.game} description={session.description} region={session.region} updatedAt={session.updatedAt} postedBy={session.postedBy}/>);
+    sessions = results.map(session => <GameSessionCard title={session.title} platform={session.platform} key={session._id} game={session.game} description={session.description} region={session.region} updatedAt={session.updatedAt} postedBy={session.postedBy}/>);
     console.log(sessions);
   } else {
     sessions = <NoSessions />
