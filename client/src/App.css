@@ -121,6 +121,7 @@ button {
   background-color: #4d2596;
   color: white;
   width : 120px;
+  border-color: white;
 }
 
 /* =================================
@@ -187,7 +188,7 @@ button {
 
 .card-title {
   color: #8064A2;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .session-header {
