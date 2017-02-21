@@ -29,8 +29,10 @@ const GameSessionCard = props => {
     imgSrc = "https://i.ytimg.com/vi/73ZbNehh_HQ/maxresdefault.jpg";
   } else if(props.game === "League of Legends") {
     imgSrc = "https://tctechcrunch2011.files.wordpress.com/2015/12/league-of-legends.png?w=1372";
-  } else {
+  } else if(props.game === "Gary's Mod"){
     imgSrc = "https://cracked-games.org/wp-content/uploads/2016/05/Garrysmodbild.jpg";
+  }  else {
+    imgSrc = ""
   }
 
   return (
@@ -42,7 +44,7 @@ const GameSessionCard = props => {
         <h4>Platform: {props.platform}</h4>
         <h4>{props.description}</h4>
         <h4 className="region-identifier">Region: {props.region}</h4>
-        <Button bsStyle="primary" className="Discordbutton">Join Discord</Button>
+        <Button bsStyle="primary" bsSize="large" className="Discordbutton"><i className="material-icons ic_chat">chat</i>Discord</Button>
       </Thumbnail>
     </li>
   );
