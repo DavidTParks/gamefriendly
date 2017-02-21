@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import Loading from 'react-loading';
 import SessionList from './Components/SessionList';
 import SearchForm from './Components/SearchForm';
 import Searchbar from './Components/Searchbar';
@@ -50,7 +51,7 @@ export default class App extends Component {
         <div className="main-content">
           {
             (this.state.loading)
-             ? <p>Loading...</p>
+             ?  <Loading type='spin' color='#e3e3e3' />
              : <SessionList data={this.state.sessions} />
           }
         </div>
