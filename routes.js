@@ -199,6 +199,24 @@ router.get("/gamesessions/:platform/:game", function(req, res, next) {
                 });
 });
 
+//GET /gamesessions
+// Route for returning multiple game sessions with parameters
+router.get("/gamesessions/:game", function(req, res, next) {
+    var platform = req.params.platform;
+    var game = req.params.game;
+    GameSession.find({game: game})
+                .lean()
+                .sort({createdAt: -1})
+                .exec(function(err, sessions) {
+                    if(err) return next(err);
+                    if (!sessions.length) {
+                        err = new Error("No sessions found");
+                        return next(err);
+                    }
+                    res.json(sessions);
+                });
+});
+
 //GET /gamesessions/:gID
 // Route for returning a single unique game session
 router.get("/gamesessions/:gID", function(req, res, next) {
@@ -223,7 +241,7 @@ router.post("/gamesessions/:uID/", function(req, res, next) {
 });
 
 //PUT /gamesessions/:uID/:gID
-//Edit a game session. 
+//Edit a game session.
 router.put("/gamesessions/:uID/sessions/:gID", function(req, res, next) {
     req.user.sessions.id(req.gamesession._id).sessionupdate(req.body, function(err, result) {
         if(err) return next(err);

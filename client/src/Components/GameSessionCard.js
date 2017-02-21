@@ -40,8 +40,8 @@ const GameSessionCard = props => {
         <h4 className="card-title">{props.title}</h4>
         <h4>Game: {props.game}</h4>
         <h4>Platform: {props.platform}</h4>
-        <h5>{props.description}</h5>
-        <h5 className="region-identifier">Region: {props.region}</h5>
+        <h4>{props.description}</h4>
+        <h4 className="region-identifier">Region: {props.region}</h4>
         <Button bsStyle="primary" className="Discordbutton">Join Discord</Button>
       </Thumbnail>
     </li>

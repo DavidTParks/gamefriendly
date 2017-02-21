@@ -257,6 +257,7 @@ button {
 .gif-wrap {
   position: relative;
   line-height: normal;
+  border: 1px;
 }
 
 

@@ -21,8 +21,8 @@ export default class App extends Component {
     this.performSearch();
   }
 
-  performSearch = (query = 'cats') => {
-    axios.get(`http://localhost:3001/gamesessions`)
+  performSearch = (query = '') => {
+    axios.get(`http://localhost:3001/gamesessions/${query}`)
       .then(response => {
         console.log(response.data);
         this.setState({
@@ -41,10 +41,10 @@ export default class App extends Component {
       <div>
         <div className="main-header">
           <div className="inner">
-            <h1 className="main-title">Gamefriendly.io</h1>
+            <h1 className="main-title" href="#">Gamefriendly.io</h1>
             <h1 className="browse-button" href="#main-content">Browse</h1>
             <h1 className="create-session">Create Session</h1>
-            <SearchForm />
+            <SearchForm onSearch={this.performSearch}/>
           </div>
         </div>
         <div className="main-content">
