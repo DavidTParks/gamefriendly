@@ -70,7 +70,7 @@ body {
   color: #4c4c4c;
   background: #f6f7f7;
   padding-top: 145px;
-  padding-bottom: 3em;
+  padding-bottom: 50px;
   margin: 0;
 }
 
@@ -111,6 +111,16 @@ button {
   outline: 0;
   position: relative;
   z-index: 2000;
+}
+
+.Discordbutton,
+.Discordbutton:hover,
+.Discordbutton:active,
+.Discordbutton:visited,
+.Discordbutton:focus {
+  background-color: #4d2596;
+  color: white;
+  width : 120px;
 }
 
 /* =================================
@@ -170,6 +180,32 @@ button {
   font-weight: 700;
 }
 
+.ic_videogame_asset {
+  float: left;
+  margin-left: 0px;
+}
+
+.card-title {
+  color: #8064A2;
+  text-transform: uppercase;
+}
+
+.session-header {
+  float: left;
+  padding-left: 10px;
+  color: #8064A2;
+  font-size: 2.5em;
+  line-height: 80px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.updated-status {
+  color: #8064A2;
+  text-align: center;
+}
+
 .icon-gif {
   font-size: 6em;
   margin-bottom: 0;
@@ -190,6 +226,14 @@ button {
   margin: auto;
 }
 
+.gif-list {
+  padding-top: 90px;
+}
+
+.tooltip-left {
+  padding-left: 50px;
+}
+
 .session-list a {
   display: block;
   margin: auto;
@@ -204,11 +248,14 @@ button {
 
 .gif-wrap {
   position: relative;
+  line-height: normal;
 }
+
 
 .game-card {
   background-color: #fff;
   position: relative;
+  border: 5px;
 }
 
 .gif-wrap img {
@@ -278,7 +325,7 @@ button {
     width: 100%;
   }
   .gif-wrap {
-    border: 1px solid white;
+    border: 0px solid white;
     padding: 0;
     overflow: hidden;
     font-size: 0;
@@ -288,6 +335,7 @@ button {
 @media (min-width: 769px) {
   body {
     padding-top: 125px;
+    padding-bottom: 150px;
   }
   .main-title {
     float: left;

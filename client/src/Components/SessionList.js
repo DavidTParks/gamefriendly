@@ -15,6 +15,7 @@ const SessionList = props => {
 
   return(
     <ul className="gif-list">
+      <h1 className ="session-header">Recent Sessions</h1>
       {sessions}
     </ul>
   );
