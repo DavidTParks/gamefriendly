@@ -30,17 +30,18 @@ const GameSessionCard = props => {
   } else if(props.game === "League of Legends") {
     imgSrc = "https://tctechcrunch2011.files.wordpress.com/2015/12/league-of-legends.png?w=1372";
   } else {
-    imgSrc = "http://www.garrysmod.com/wp-content/uploads/2013/05/garrysmod2.png";
+    imgSrc = "https://cracked-games.org/wp-content/uploads/2016/05/Garrysmodbild.jpg";
   }
 
   return (
     <li className="gif-wrap">
+      <Tooltip placement="left" className="in" id="tooltip-left">7 mins ago</Tooltip>
       <Thumbnail className="thumbs" src={imgSrc} alt="242x200">
         <h4 className="card-title">{props.title}</h4>
-        <h4>{props.game}</h4>
-        <h4>{props.platform}</h4>
+        <h4>Game: {props.game}</h4>
+        <h4>Platform: {props.platform}</h4>
         <h5>{props.description}</h5>
-        <h5 className="region-identifier">{props.region}</h5>
+        <h5 className="region-identifier">Region: {props.region}</h5>
         <Button bsStyle="primary" className="Discordbutton">Join Discord</Button>
       </Thumbnail>
     </li>

@@ -69,7 +69,7 @@ body {
   font: 1em/1.5 'Roboto', sans-serif;
   color: #4c4c4c;
   background: #f6f7f7;
-  padding-top: 145px;
+  padding-top: 75px;
   padding-bottom: 50px;
   margin: 0;
 }
@@ -235,7 +235,7 @@ button {
 }
 
 .gif-list {
-  padding-top: 90px;
+  padding-top: 5px;
 }
 
 .tooltip-left {
@@ -282,7 +282,7 @@ button {
 }
 
 .main-header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
