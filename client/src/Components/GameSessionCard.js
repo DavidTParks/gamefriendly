@@ -1,5 +1,6 @@
 import React from 'react';
 import * as ReactBootstrap from "react-bootstrap";
+import timeago from 'timeago.js';
 var Navbar = ReactBootstrap.Navbar,
 Nav = ReactBootstrap.Nav,
 NavDropdown = ReactBootstrap.NavDropdown,
@@ -35,9 +36,11 @@ const GameSessionCard = props => {
     imgSrc = ""
   }
 
+  var updatedTime = new timeago().format(props.updatedAt);
+
   return (
     <li className="gif-wrap">
-      <Tooltip placement="left" className="in" id="tooltip-left">7 mins ago</Tooltip>
+      <Tooltip placement="left" className="in" id="tooltip-left">{updatedTime}</Tooltip>
       <Thumbnail className="thumbs" src={imgSrc} alt="242x200">
         <h4 className="card-title">{props.title}</h4>
         <h4>Game: {props.game}</h4>
