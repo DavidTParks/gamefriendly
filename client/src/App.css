@@ -149,6 +149,10 @@ button {
   margin: 0;
 }
 
+.tooltip-left {
+  text-transform: capitalize;
+}
+
 .thumbs {
   margin-bottom: 0px;
   margin-top: 0px;
