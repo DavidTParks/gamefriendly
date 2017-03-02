@@ -47,7 +47,7 @@ const GameSessionCard = props => {
         <h4>Platform: {props.platform}</h4>
         <h4>{props.description}</h4>
         <h4 className="region-identifier">Region: {props.region}</h4>
-        <Button bsStyle="primary" bsSize="large" className="Discordbutton"><i className="material-icons ic_chat">chat</i>Discord</Button>
+        <Button bsStyle="primary" bsSize="large" className="Discordbutton"><i className="material-icons ic_chat">chat</i>  Discord</Button>
       </Thumbnail>
     </li>
   );

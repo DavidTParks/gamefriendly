@@ -157,8 +157,8 @@ button {
   margin-bottom: 0px;
   margin-top: 0px;
   color: #f6f7f7;
-  padding : 5px;
-  margin: 6px;
+  padding : 6px;
+  margin: 10px;
 }
 
 .search-form input:only-of-type {
@@ -274,7 +274,7 @@ button {
   font: 'Roboto', sans-serif;
   background-color: #4d2596;
   color: white;
-  width : 130px;
+  width : 115px;
   padding: 0px;
   border-color: white;
 }
