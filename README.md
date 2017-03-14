@@ -3,7 +3,7 @@
 
 Gamefriendly is an application designed to connect like-minded gamers across multiple platforms. Create parties and game sessions with gamers of similar skill level, age, and seriousness. This application is still in development. 
 
-## To Run
+## To Start Dev Server
 Clone the repo to your machine and run
 ```
 npm install
