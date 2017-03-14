@@ -12,8 +12,6 @@ const items = [
 ];
 
 ReactDOM.render(
-  <Sidebar background="#8064A2" closeOnBackdropClick={true} width="200" content={items}>
-    <App />
-  </Sidebar>,
+  <App />,
   document.getElementById('root')
 );
