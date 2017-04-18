@@ -17,7 +17,7 @@ app.use(cookieParser());
 //Mongoose Configuration
 var mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/deletedbroute");
+mongoose.connect("mongodb://davidtparks:Rocket11352@ds127949.mlab.com:27949/heroku_0jx88s0b");
 
 var db = mongoose.connection;
 
